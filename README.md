@@ -52,3 +52,28 @@ GOOGLE_CLIENT_SECRET=your_google_client_secret
 NEXTAUTH_SECRET=your_secret
 NEXTAUTH_URL=http://localhost:3000
 ```
+
+## Route Summary
+
+### Pages (Frontend)
+
+| Route                | Page / Component     | Description                                           |
+| -------------------- | -------------------- | ----------------------------------------------------- |
+| `/`                  | `HomePage`           | Homepage with featured products and navigation.       |
+| `/all-products`      | `AllProductsPage`    | Displays all products from MongoDB in a grid layout.  |
+| `/all-products/[id]` | `ProductDetailsPage` | Shows detailed information of a single product by ID. |
+| `/add-product`       | `AddProductPage`     | Form to add a new product (login required).           |
+| `/login`             | `LoginPage`          | User login page (NextAuth with Google OAuth).         |
+| `/register`          | `RegisterPage`       | User registration page (if implemented).              |
+
+---
+
+### API Routes (Backend)
+
+| API Route                 | Method     | Description                                           |
+| ------------------------- | ---------- | ----------------------------------------------------- |
+| `/api/products`           | `GET`      | Fetch all products from MongoDB.                      |
+| `/api/products`           | `POST`     | Add a new product to MongoDB.                         |
+| `/api/auth/[...nextauth]` | `GET/POST` | Handles authentication using NextAuth (Google OAuth). |
+
+---
