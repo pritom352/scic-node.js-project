@@ -6,7 +6,7 @@ import ProductHighlights from "./components/ProductHighlights";
 export default async function HomePage() {
   const client = await clientPromise;
   const db = client.db("techgadgets"); // তোমার ডাটাবেস নাম
-  const products = await db.collection("products").find({}).toArray();
+  const products = await db.collection("products").find({}).limit(8).toArray();
 
   return (
     <main>
