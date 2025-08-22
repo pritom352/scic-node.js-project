@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // Hamburger icons
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,11 +24,18 @@ export default function Navbar() {
             <Link href="/" className="hover:text-blue-500 transition-colors">
               Home
             </Link>
+
             <Link
-              href="/products"
+              href="/add-product"
               className="hover:text-blue-500 transition-colors"
             >
-              Products
+              Add Product
+            </Link>
+            <Link
+              href="/all-products"
+              className="hover:text-blue-500 transition-colors"
+            >
+              All Products
             </Link>
             <Link
               href="/login"
@@ -58,11 +65,18 @@ export default function Navbar() {
             >
               Home
             </Link>
+
             <Link
-              href="/products"
+              href="/add-product"
               className="block hover:text-blue-500 transition-colors"
             >
-              Products
+              Add Product
+            </Link>
+            <Link
+              href="/all-products/page.js"
+              className="block hover:text-blue-500 transition-colors"
+            >
+              All Products
             </Link>
             <Link
               href="/login"
