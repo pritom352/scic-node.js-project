@@ -25,21 +25,18 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const data = await req.json();
-    const { name, description, price } = data;
-
-    // if (!name || !description || !price) {
-    //   return new Response(
-    //     JSON.stringify({ error: "Name, description and price are required" }),
-    //     { status: 400, headers: { "Content-Type": "application/json" } }
-    //   );
-    // }
+    const { name, description, price, category, brand, stock } = data;
 
     const client = await clientPromise;
     const db = client.db("techgadgets");
+
     const result = await db.collection("products").insertOne({
-      name,
-      description,
-      price: parseFloat(price),
+      name: name || "N/A",
+      description: description || "N/A",
+      price: parseFloat(price) || 0,
+      category: category || "N/A",
+      brand: brand || "N/A",
+      stock: parseInt(stock) || 0,
       createdAt: new Date(),
     });
 
